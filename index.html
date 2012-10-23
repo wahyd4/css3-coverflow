@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset="UTF-8">
+<title>CSS3 cover flow</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+
+
+<script type="text/javascript" src="js/MpCoverFlow.js"></script>
+
+<script type="text/javascript">
+	
+	    function onshow(){
+		var test=document.getElementById("container");
+			var test2=document.getElementById("containerbk");
+		var viewdiv=document.getElementById("panorama_view");
+		viewdiv.style.height="500px";
+		test.style.display="block";
+		test2.style.display="block";
+		test2.style.top=document.body.scrollTop+"px";
+		test.style.top = test.offsetTop+document.body.scrollTop+"px";
+		
+		document.body.style.overflow="hidden";
+		window.onresize = resizework;
+		}
+		
+		function resizework(){
+			var test=document.getElementById("container");
+			var test2=document.getElementById("containerbk");
+			test2.style.top=document.body.scrollTop+"px";
+			test.style.top = test.offsetTop+document.body.scrollTop+"px";
+			test2.style.height=document.body.offsetHeight+"px";
+		}
+		
+		function returnToHome(){
+			document.getElementById("homePage").style.display="block";
+			document.getElementById("searchPage").style.display="none";
+		}
+		
+	
+	</script>
+</head>
+<body>
+    <!-- this is homePage -->
+    <div id="homePage" style="display:block;">
+	    <div id="header">
+	       <div id="logo">
+	       </div>
+	    </div>
+	    <div id="body">
+	       <div id="menu">
+		           
+		           <div class="menu_list" >Home</div>
+		           <div class="menu_list">Editor</div>
+		           <div class="menu_list">Maps</div>
+		           <div class="menu_list">Contacts</div>
+		    </div>
+		    
+		    <form action="" method="post">
+     	  
+		      <input type="text" class="searchArea" name="searchArea">
+		      <a  class="submit" href="#" ><img src="images/da.png"></a>
+ 
+	        </form>
+	        
+	        <div id="continer">
+	            <div id="slidebar">
+         	        <input onmousedown="testdown(event)" onmouseup="testup(event)" type="range" min="0" max="3" value="0" step="1" />
+         	   </div>
+	        <div id="id1" >
+		        <p style="text-align:center;"></p>
+				<p style="text-align:center;"><span style="font-size:24px;">MapULife</span></p>
+				<p><span style="font-size:24px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size:18px;"> ——another way to shopping,and enjoy your life!</span></span></p>
+				<p style="text-align:left;"><span style="font-size:24px;"><span style="font-size:18px;"><br />
+				</span></span></p>
+				<p></p>
+            </div>
+            <div id="id2" ">
+                   <img src="images/5.jpg">
+			        <span class="hotspot  hpOne"></span>
+				   <span class="hotspot hpTwo"></span>
+             </div>
+             <div id="id3" >
+                    <img src="images/7.jpg">
+             </div>
+              <div id="id4">
+                     <img src="images/6.jpg">
+              </div>
+         </div>	
+	    </div>
+	    <div id="footer">
+	    </div>
+	</div>
+
+</body>
+</html>
